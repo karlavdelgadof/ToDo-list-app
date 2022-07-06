@@ -9,14 +9,15 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-   static: './dist',
+    static: './dist',
   },
-  module: { 
-  rules: [ 
-    { test: /\.css$/i, 
-      use: ['style-loader', 'css-loader'], 
-    }, 
-  ], 
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -31,6 +32,6 @@ module.exports = {
     clean: true,
   },
   optimization: {
-   runtimeChunk: 'single',
+    runtimeChunk: 'single',
   },
 };
