@@ -1,7 +1,72 @@
-body {
-  background-color: lightblue;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hello {
-  color: purple;
+body {
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  background-color: #f1f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #545862;
+}
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background-color: rgb(247, 247, 248);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  margin-top: 5rem;
+}
+
+#todo-list a {
+  background: transparent;
+  border: none;
+  padding: 1rem 1.3rem;
+  text-align: center;
+  text-decoration: none;
+  color: gray;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  fill: rgba(152, 152, 152, 1);
+}
+
+#header,
+#add-task {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#add-task input {
+  background-color: rgb(247, 247, 248);
+  width: 90%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+
+#task-list {
+  width: 100%;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1.3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.task-d {
+  width: 90%;
 }
