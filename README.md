@@ -1,26 +1,21 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/-HTML-orange) ![](https://img.shields.io/badge/-CSS-blue) ![](https://img.shields.io/badge/-JavaScript-yellow) ![](https://img.shields.io/badge/-webpack-ABC9FF)
 
-# Awesome Books
-> A basic app project built with HTML, CSS and JS to keep track of awesome books.
-
+# To-Do List 
+> "To-do list" is an app that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 ## Built With
 
 - **HTML/CSS & JS best practices:** Correct use of tags, elements, properties and syntax.
 - **GitHub flow:**  Correct use of Branches for deployment and features development.
 - **Linters Check:** Local and Pull Request check for errors, bugs and stylistic errors in code.
+- **Webpack:** used as a bundle to compile JavaScript modules.
+
 
 ## Live Demo :arrow_forward:
 
 [Awesome Books SPA](https://raminka13.github.io/BooklistApp/)
 
 ## Authors
-
-👤 **Raul A Ospina**
-
-- GitHub: [@raminka13](https://github.com/raminka13)
-- Twitter: [@raminka13](https://twitter.com/raminka13)
-- LinkedIn: [Raul Ospina](http://linkedin.com/in/raul-ospina-83232614)
 
 👤 **Karla Delgado**
 
@@ -31,9 +26,9 @@
 
 ## Project Milestones
 
-- Milestone 1: Manage books collection (plain JS with objects). :heavy_check_mark:
-- Milestone 2: Manage books collection (plain JS with classes) and add basic CSS. :heavy_check_mark:
-- Milestone 3: Create a complete website with navigation. :heavy_check_mark:
+- Milestone 1: List structure. :hammer_and_wrench:
+- Milestone 2: Interactive list. :gear:
+- Milestone 3: Add and remove items. :gear:
 
 
 ## Show your support
@@ -43,4 +38,6 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
+
 
