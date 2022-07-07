@@ -1,8 +1,7 @@
 import './style.css';
-import {UIDisplay} from './modules/userInterface';
-import * as Store from './modules/local-storage';
-import taskList from './modules/userInterface';
-import removeTask from './modules/remove-storage';
+import * as Store from './modules/local-storage.js';
+import UIDisplay from './modules/userInterface.js';
+import taskArr from './modules/taskarr.js';
 
 class Task {
   constructor(description, completed, index) {
@@ -11,9 +10,6 @@ class Task {
     this.index = index;
   }
 }
-
-let taskArr = [];
-export default taskArr;
 
 const addInput = document.getElementById('add');
 
@@ -25,17 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 addInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter' && addInput.value) {
     const task = new Task(addInput.value, false, taskArr.length + 1);
-    taskArr.push(task)
+    taskArr.push(task);
     // Prevent submit
     e.preventDefault();
     UIDisplay.createTask(task);
     Store.addTask(taskArr);
-    addInput.value = ''
-    console.log(taskArr)
+    addInput.value = '';
   } else {
     addInput.setAttribute('required', '');
   }
-  
 });
-
-
