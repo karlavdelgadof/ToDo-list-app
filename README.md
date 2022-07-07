@@ -13,7 +13,7 @@
 
 ## Live Demo :arrow_forward:
 
-[To-Do List App](https://karlavdelgadof.github.io/ToDo-list-app/dist)
+[To-Do List App](https://karlavdelgadof.github.io/ToDo-list-app/dist/)
 
 ## Authors
 

@@ -45,7 +45,7 @@ export default class UIDisplay {
       dots.classList.toggle('show');
       trashIcon.classList.toggle('show');
       taskDesc.classList.toggle('cross');
-      task.classList.toggle('active')
+      task.classList.toggle('active');
       if (el.completed === false) {
         el.completed = true;
       } else {

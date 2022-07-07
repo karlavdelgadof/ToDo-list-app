@@ -23,4 +23,4 @@ clearAll.addEventListener('click', () => {
   const remain = taskArr;
   const completed = remain.filter((task) => task.completed === true);
   completed.forEach((task) => removeTask(task));
-})
+});
