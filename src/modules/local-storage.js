@@ -1,6 +1,5 @@
 const getTasks = (tasks) => {
-  tasks = tasks.push(...JSON.parse(localStorage.getItem('tasks')));
-  return tasks;
+  return tasks.push(...JSON.parse(localStorage.getItem('tasks')));
 };
 
 const addTask = (tasks) => {
