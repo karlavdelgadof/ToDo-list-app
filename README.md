@@ -13,7 +13,7 @@
 
 ## Live Demo :arrow_forward:
 
-[To-Do List App](https://karlavdelgadof.github.io/ToDo-list-app/)
+[To-Do List App](https://karlavdelgadof.github.io/ToDo-list-app/dist)
 
 ## Authors
 
@@ -27,7 +27,7 @@
 ## Project Milestones
 
 - Milestone 1: List structure. :heavy_check_mark:
-- Milestone 2: Add and remove items. :hammer_and_wrench:
+- Milestone 2: Add and remove items. :heavy_check_mark:
 - Milestone 3: Interactive list. :gear:
 
 
