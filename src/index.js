@@ -1,54 +1,41 @@
 import './style.css';
+import {UIDisplay} from './modules/userInterface';
+import * as Store from './modules/local-storage';
+import taskList from './modules/userInterface';
+import removeTask from './modules/remove-storage';
 
-const tasks = [
-  {
-    description: 'Calling my friend',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Finishing the list structure',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Clean the kitchen',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Walk the dogs',
-    completed: false,
-    index: 3,
-  },
-  {
-    description: 'Do the shopping',
-    completed: false,
-    index: 4,
-  },
-];
-const taskList = document.getElementById('task-list');
+class Task {
+  constructor(description, completed, index) {
+    this.description = description;
+    this.completed = completed;
+    this.index = index;
+  }
+}
 
-const displayTask = (el) => {
-  const task = document.createElement('li');
-  task.classList.add('task');
+let taskArr = [];
+export default taskArr;
 
-  const checkBox = document.createElement('input');
-  checkBox.setAttribute('type', 'checkbox');
-  task.appendChild(checkBox);
+const addInput = document.getElementById('add');
 
-  const taskDesc = document.createElement('p');
-  taskDesc.classList.add('task-d');
-  taskDesc.textContent = el.description;
-  task.appendChild(taskDesc);
-
-  const dots = document.createElement('i');
-  dots.classList.add('fa-solid', 'fa-ellipsis-vertical');
-  task.appendChild(dots);
-
-  taskList.appendChild(task);
-};
-
-tasks.forEach((element) => {
-  displayTask(element);
+document.addEventListener('DOMContentLoaded', () => {
+  Store.getTasks(taskArr);
+  UIDisplay.displayTaks(taskArr);
 });
+
+addInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && addInput.value) {
+    const task = new Task(addInput.value, false, taskArr.length + 1);
+    taskArr.push(task)
+    // Prevent submit
+    e.preventDefault();
+    UIDisplay.createTask(task);
+    Store.addTask(taskArr);
+    addInput.value = ''
+    console.log(taskArr)
+  } else {
+    addInput.setAttribute('required', '');
+  }
+  
+});
+
+
