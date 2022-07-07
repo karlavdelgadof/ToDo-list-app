@@ -26,9 +26,9 @@
 
 ## Project Milestones
 
-- Milestone 1: List structure. :hammer_and_wrench:
-- Milestone 2: Interactive list. :gear:
-- Milestone 3: Add and remove items. :gear:
+- Milestone 1: List structure. :heavy_check_mark:
+- Milestone 2: Add and remove items. :hammer_and_wrench:
+- Milestone 3: Interactive list. :gear:
 
 
 ## Show your support
