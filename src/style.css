@@ -56,6 +56,26 @@ li {
   font-size: 1rem;
 }
 
+i[class^="fa"] {
+  color: rgba(152, 152, 152, 1);
+}
+
+.fa-ellipsis-vertical {
+  display: none;
+}
+
+.fa-ellipsis-vertical.show {
+  display: block;
+}
+
+.fa-trash-can {
+  display: none;
+}
+
+.fa-trash-can.show {
+  display: block;
+}
+
 #task-list {
   width: 100%;
 }
@@ -67,6 +87,24 @@ li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.task.active {
+  background-color: #fffeca;
+}
+
 .task-d {
   width: 90%;
+  background-color: rgb(247, 247, 248);
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  padding-left: 0.8rem;
+}
+
+.task-d.active {
+  background-color: #fffeca;
+}
+
+.task-d.cross {
+  text-decoration: line-through;
+  width: 87.1%;
 }
