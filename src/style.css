@@ -33,6 +33,11 @@ body {
   box-shadow: 5px 10px 8px rgba(202, 67, 29, 0.492);
 }
 
+#todo-list {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
 #hero {
   background: none;
   box-shadow: none;
