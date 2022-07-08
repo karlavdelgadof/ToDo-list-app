@@ -1,54 +1,62 @@
 import './style.css';
+import * as Store from './modules/local-storage.js';
+import UIDisplay from './modules/userInterface.js';
+import taskArr from './modules/taskarr.js';
+import removeTask from './modules/remove-storage.js';
 
-const tasks = [
-  {
-    description: 'Calling my friend',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Finishing the list structure',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Clean the kitchen',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Walk the dogs',
-    completed: false,
-    index: 3,
-  },
-  {
-    description: 'Do the shopping',
-    completed: false,
-    index: 4,
-  },
-];
-const taskList = document.getElementById('task-list');
+class Task {
+  constructor(description, completed, index) {
+    this.description = description;
+    this.completed = completed;
+    this.index = index;
+  }
+}
 
-const displayTask = (el) => {
-  const task = document.createElement('li');
-  task.classList.add('task');
+const syncIcon = document.getElementById('sync');
 
-  const checkBox = document.createElement('input');
-  checkBox.setAttribute('type', 'checkbox');
-  task.appendChild(checkBox);
+syncIcon.addEventListener('click', () => {
+  taskArr.forEach((task) => { task.completed = true; });
+  const completed = taskArr.filter((task) => task.completed === true);
+  completed.forEach((task) => removeTask(task));
+});
 
-  const taskDesc = document.createElement('p');
-  taskDesc.classList.add('task-d');
-  taskDesc.textContent = el.description;
-  task.appendChild(taskDesc);
+const addInput = document.getElementById('add');
 
-  const dots = document.createElement('i');
-  dots.classList.add('fa-solid', 'fa-ellipsis-vertical');
-  task.appendChild(dots);
+document.addEventListener('DOMContentLoaded', () => {
+  Store.getTasks(taskArr);
+  taskArr.forEach((task) => { task.completed = false; });
+  Store.addTask(taskArr);
+  UIDisplay.displayTaks(taskArr);
+});
 
-  taskList.appendChild(task);
-};
+const addIcon = document.getElementById('add-icon');
 
-tasks.forEach((element) => {
-  displayTask(element);
+addInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && addInput.value) {
+    const task = new Task(addInput.value, false, taskArr.length + 1);
+    taskArr.push(task);
+    // Prevent submit
+    e.preventDefault();
+    UIDisplay.createTask(task);
+    Store.addTask(taskArr);
+
+    addInput.value = '';
+  } else {
+    addInput.setAttribute('required', '');
+  }
+});
+
+addIcon.addEventListener('click', (e) => {
+  if (addInput.value) {
+    const task = new Task(addInput.value, false, taskArr.length + 1);
+    taskArr.push(task);
+    // Prevent submit
+    e.preventDefault();
+    UIDisplay.createTask(task);
+    Store.addTask(taskArr);
+
+    addInput.value = '';
+  } else {
+    addInput.setAttribute('required', '');
+  }
 });

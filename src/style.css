@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,30 +8,55 @@
 }
 
 body {
-  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
-  background-color: #f1f2f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #545862;
-}
-
-#todo-list {
+  font-family: 'Space Grotesk', sans-serif;
+  background: url('./bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(243, 173, 75, 0.845);
+  background-blend-mode: soft-light;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  color: #545862;
+  height: 100vh;
+}
+
+#todo-list,
+#hero {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
   background-color: rgb(247, 247, 248);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
-  margin-top: 5rem;
+  box-shadow: 5px 10px 8px rgba(202, 67, 29, 0.492);
+}
+
+#hero {
+  background: none;
+  box-shadow: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+#hero h1 {
+  font-family: 'Darker Grotesque', sans-serif;
+  color: rgb(219, 45, 67);
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 #todo-list a {
-  background: transparent;
   border: none;
   padding: 1rem 1.3rem;
   text-align: center;
   text-decoration: none;
-  color: gray;
+  background-image: linear-gradient(90deg, rgb(168, 2, 111), rgb(219, 45, 67), rgb(231, 104, 56), rgb(255, 153, 0));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
 }
 
 li {
@@ -37,6 +65,7 @@ li {
 
 .icon {
   fill: rgba(152, 152, 152, 1);
+  cursor: pointer;
 }
 
 #header,
@@ -53,7 +82,57 @@ li {
   width: 90%;
   outline: none;
   border: none;
+  font-family: inherit;
   font-size: 1rem;
+}
+
+#add-icon svg {
+  fill: rgb(231, 104, 56);
+}
+
+#header h2 {
+  font-family: 'Darker Grotesque', sans-serif;
+  background-image: linear-gradient(90deg, rgb(168, 2, 111), rgb(219, 45, 67), rgb(231, 104, 56), rgb(255, 153, 0));
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  width: 70%;
+}
+
+#sync {
+  display: flex;
+  align-items: center;
+}
+
+#sync svg {
+  fill: rgb(219, 45, 67);
+}
+
+#sync svg:hover {
+  fill: #57d131;
+}
+
+i[class^="fa"] {
+  color: rgba(152, 152, 152, 1);
+}
+
+.fa-ellipsis-vertical {
+  display: none;
+}
+
+.fa-ellipsis-vertical.show {
+  display: block;
+}
+
+.fa-trash-can {
+  display: none;
+}
+
+.fa-trash-can.show {
+  display: block;
 }
 
 #task-list {
@@ -67,6 +146,39 @@ li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.task.active {
+  background-color: #28df99;
+}
+
 .task-d {
   width: 90%;
+  background-color: rgb(247, 247, 248);
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  padding-left: 0.8rem;
+}
+
+.task-d.active {
+  background-color: #28df99;
+}
+
+.task-d.cross {
+  text-decoration: line-through;
+  width: 87.1%;
+  background-color: transparent;
+}
+
+#clear-all {
+  background-image: linear-gradient(90deg, rgb(168, 2, 111), rgb(219, 45, 67), rgb(231, 104, 56), rgb(255, 153, 0));
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  #todo-list,
+  #hero {
+    width: 50%;
+  }
 }
