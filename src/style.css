@@ -33,11 +33,6 @@ body {
   box-shadow: 5px 10px 8px rgba(202, 67, 29, 0.492);
 }
 
-#todo-list {
-  overflow: hidden;
-  overflow-y: scroll;
-}
-
 #hero {
   background: none;
   box-shadow: none;
@@ -142,6 +137,8 @@ i[class^="fa"] {
 
 #task-list {
   width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .task {
