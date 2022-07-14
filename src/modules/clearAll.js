@@ -1,5 +1,5 @@
-import removeTask from "./removeTask";
-import taskArr from "./taskarr";
+import removeTask from './removeTask.js';
+import taskArr from './taskarr.js';
 
 const clearAll = document.getElementById('clear-all');
 

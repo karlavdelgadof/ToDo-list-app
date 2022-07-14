@@ -3,9 +3,7 @@ import * as Store from './modules/local-storage.js';
 import UIDisplay from './modules/userInterface.js';
 import taskArr from './modules/taskarr.js';
 import removeTask from './modules/removeTask.js';
-import addNewTask from './modules/addtask';
-
-
+import addNewTask from './modules/addtask.js';
 
 const syncIcon = document.getElementById('sync');
 
@@ -27,21 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
 const addIcon = document.getElementById('add-icon');
 
 addInput.addEventListener('keypress', (e) => {
-  if (e.key === "Enter" && addInput.value) {
+  if (e.key === 'Enter' && addInput.value) {
     addNewTask(addInput.value);
     e.preventDefault();
-    addInput.value = "";
+    addInput.value = '';
   } else {
-    addInput.setAttribute("required", "");
+    addInput.setAttribute('required', '');
   }
 });
 
 addIcon.addEventListener('click', (e) => {
-  if (e.key === "Enter" && addInput.value) {
+  if (e.key === 'Enter' && addInput.value) {
     addNewTask(addInput.value);
     e.preventDefault();
-    addInput.value = "";
+    addInput.value = '';
   } else {
-    addInput.setAttribute("required", "");
+    addInput.setAttribute('required', '');
   }
 });
