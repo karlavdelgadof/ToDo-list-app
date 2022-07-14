@@ -68,7 +68,6 @@ describe('Clear all / edit input / completed', () => {
   });
 
   test('Update status false to true', () => {
-
     const task = [
       {
         description: 'Gordo',
@@ -87,10 +86,10 @@ describe('Clear all / edit input / completed', () => {
       },
     ];
 
-    for (let i = 0; i< task.length; i+= 1) {
-       UIDisplay.createTask(task[i]);
+    for (let i = 0; i < task.length; i += 1) {
+      UIDisplay.createTask(task[i]);
     }
-   
+
     const checkTask = (el) => {
       if (el.completed === false) {
         el.completed = true;
@@ -99,10 +98,10 @@ describe('Clear all / edit input / completed', () => {
       }
     };
 
-    for (let i = 0; i < task.length; i+= 1) {
-      checkTask(task[i])
+    for (let i = 0; i < task.length; i += 1) {
+      checkTask(task[i]);
     }
-    
+
     expect(task[0].completed).toBe(false);
     expect(task[2].completed).toBe(true);
   });

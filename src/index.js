@@ -4,7 +4,7 @@ import UIDisplay from './modules/userInterface.js';
 import taskArr from './modules/taskarr.js';
 import removeTask from './modules/removeTask.js';
 import addNewTask from './modules/addtask.js';
-import filterAll from './modules/clearAll';
+import filterAll from './modules/clearAll.js';
 
 const syncIcon = document.getElementById('sync');
 

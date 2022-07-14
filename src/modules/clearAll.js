@@ -1,4 +1,3 @@
-import taskArr from './taskarr.js';
 import removeTask from './removeTask.js';
 
 const filterAll = (arr) => {
