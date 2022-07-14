@@ -23,12 +23,17 @@
 - Twitter: [@karlavdelgadof](https://twitter.com/karlavdelgadof)
 - LinkedIn: [Karla Delgado](https://www.linkedin.com/in/karla-delgado-613a32239/)
 
+## Collaborators :handshake: :man_technologist:
+
+👤 **Say Vior**
+
+-GitHub: @vitorguedesmadeira
 
 ## Project Milestones
 
 - Milestone 1: List structure. :heavy_check_mark:
 - Milestone 2: Add and remove items. :heavy_check_mark:
-- Milestone 3: Interactive list. :gear:
+- Milestone 3: Interactive list. :heavy_check_mark:
 
 
 ## Show your support
