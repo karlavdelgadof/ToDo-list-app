@@ -48,5 +48,5 @@ addIcon.addEventListener('click', (e) => {
 const clearAll = document.getElementById('clear-all');
 
 clearAll.addEventListener('click', () => {
-  filterAll(taskArr)
+  filterAll(taskArr);
 });
