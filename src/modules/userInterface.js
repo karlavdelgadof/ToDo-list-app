@@ -26,7 +26,7 @@ export default class UIDisplay {
     task.appendChild(trashIcon);
 
     checkBox.addEventListener('change', () => {
-      checkTask(dots, taskDesc, task, trashIcon, el)
+      checkTask(dots, taskDesc, task, trashIcon, el);
     });
 
     taskDesc.addEventListener('click', () => {

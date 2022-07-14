@@ -4,7 +4,7 @@
   "description": "A webpack boilerplate created as a starting point for microverse projects.",
   "private": true,
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"
   },

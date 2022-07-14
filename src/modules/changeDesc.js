@@ -1,4 +1,4 @@
-import taskArr from "./taskarr";
+import taskArr from './taskarr.js';
 import * as Store from './local-storage.js';
 
 const changeDesc = (input, taskel, el) => {
