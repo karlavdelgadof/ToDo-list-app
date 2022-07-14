@@ -41,8 +41,18 @@ describe('Clear all / edit input / completed', () => {
     const task = [
       {
         description: 'Gordo',
-        completed: false,
+        completed: true,
         index: 1,
+      },
+      {
+        description: 'Kiko',
+        completed: true,
+        index: 2,
+      },
+      {
+        description: 'Nunito',
+        completed: false,
+        index: 3,
       },
     ];
 
@@ -56,4 +66,49 @@ describe('Clear all / edit input / completed', () => {
     changeDesc(input, task);
     expect(input.value).toBe('queen Maleficent');
   });
+
+  test('Update status false to true', () => {
+
+    const task = [
+      {
+        description: 'Gordo',
+        completed: true,
+        index: 1,
+      },
+      {
+        description: 'Kiko',
+        completed: true,
+        index: 2,
+      },
+      {
+        description: 'Nunito',
+        completed: false,
+        index: 3,
+      },
+    ];
+
+    for (let i = 0; i< task.length; i+= 1) {
+       UIDisplay.createTask(task[i]);
+    }
+   
+    const checkTask = (el) => {
+      if (el.completed === false) {
+        el.completed = true;
+      } else {
+        el.completed = false;
+      }
+    };
+
+    for (let i = 0; i < task.length; i+= 1) {
+      checkTask(task[i])
+    }
+    
+    expect(task[0].completed).toBe(false);
+    expect(task[2].completed).toBe(true);
+  });
+
+  // test('Update status true to false', () => {
+  //   document.querySelector('#c_1').click();
+  //   expect(JSON.parse(localStorage.getItem('tasks'))[0].completed).toBe(false);
+  // });
 });
