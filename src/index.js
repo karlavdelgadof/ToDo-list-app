@@ -4,6 +4,7 @@ import UIDisplay from './modules/userInterface.js';
 import taskArr from './modules/taskarr.js';
 import removeTask from './modules/removeTask.js';
 import addNewTask from './modules/addtask.js';
+import filterAll from './modules/clearAll';
 
 const syncIcon = document.getElementById('sync');
 
@@ -42,4 +43,10 @@ addIcon.addEventListener('click', (e) => {
   } else {
     addInput.setAttribute('required', '');
   }
+});
+
+const clearAll = document.getElementById('clear-all');
+
+clearAll.addEventListener('click', () => {
+  filterAll(taskArr)
 });
