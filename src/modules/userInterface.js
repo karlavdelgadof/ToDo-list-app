@@ -1,22 +1,6 @@
-import taskArr from './taskarr.js';
-import * as Store from './local-storage.js';
-import removeTask from './remove-storage.js';
-
-const taskList = document.getElementById('task-list');
-
-const changeDesc = (input, taskel, el) => {
-  taskel.classList.toggle('active');
-  input.classList.toggle('active');
-  input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      input.value = e.target.value;
-      input.classList.toggle('active');
-      taskel.classList.toggle('active');
-      taskArr[el.index - 1].description = input.value;
-      Store.addTask(taskArr);
-    }
-  });
-};
+import removeTask from './removeTask.js';
+import changeDesc from './changeDesc.js';
+import checkTask from './checkTask.js';
 
 export default class UIDisplay {
   static createTask = (el) => {
@@ -42,16 +26,7 @@ export default class UIDisplay {
     task.appendChild(trashIcon);
 
     checkBox.addEventListener('change', () => {
-      dots.classList.toggle('show');
-      trashIcon.classList.toggle('show');
-      taskDesc.classList.toggle('cross');
-      task.classList.toggle('active');
-      if (el.completed === false) {
-        el.completed = true;
-      } else {
-        el.completed = false;
-      }
-      Store.addTask(taskArr);
+      checkTask(dots, taskDesc, task, trashIcon, el);
     });
 
     taskDesc.addEventListener('click', () => {
@@ -62,7 +37,7 @@ export default class UIDisplay {
       removeTask(el);
     });
 
-    taskList.appendChild(task);
+    document.getElementById('task-list').appendChild(task);
   };
 
   static displayTaks(arr) {
